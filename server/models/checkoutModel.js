@@ -41,6 +41,11 @@ const checkoutSchema = new mongoose.Schema({
   },
 });
 
+checkoutSchema.pre(/^find/, function (next) {
+  this.select('-paymentInfo').populate({ path: 'product', select: '-__v' });
+  next();
+});
+
 const Checkout = mongoose.model('Checkout', checkoutSchema);
 
 module.exports = Checkout;

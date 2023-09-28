@@ -2,7 +2,22 @@ const Product = require('../models/productModel');
 const catchAsync = require('../utils/catchAsync');
 
 exports.getAllProduct = catchAsync(async (req, res, next) => {
-  const products = await Product.find();
+  // 1) Filtering
+  const queryObj = { ...req.query };
+  const excludeFields = ['sort', 'page'];
+  excludeFields.forEach((el) => delete queryObj[el]);
+
+  const partialName = queryObj.name || '';
+  const regex = new RegExp(`^${partialName}`, 'i');
+
+  let query = Product.find({ name: regex });
+
+  // 2) Sorting
+  if (req.query.sort) {
+    query = query.sort(req.query.sort);
+  }
+
+  const products = await query;
 
   res.status(200).json({
     status: 'success',
