@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import Search from './Search';
-import Sort from './Sort';
+import Logout from './Logout';
+import { cookies } from 'next/headers';
 
 type Props = {};
 const Header = (props: Props) => {
+  const cookieStore = cookies();
+  const token = cookieStore.get('jwt');
+
   return (
     <header>
       <nav className="bg-gray-800 flex px-3 py-4 text-white justify-between">
@@ -12,8 +15,11 @@ const Header = (props: Props) => {
         </div>
         <div></div>
         <ul className="mr-6">
-          <li>
-            <Link href="/order-history">My Orders</Link>
+          <li className="flex gap-6 items-center">
+            {token?.value && token?.value !== 'loggedout' && (
+              <Link href="/order-history">My Orders</Link>
+            )}
+            {token?.value && token.value !== 'loggedout' && <Logout />}
           </li>
         </ul>
       </nav>

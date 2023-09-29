@@ -15,6 +15,7 @@ const ProductItem = (props: Props) => {
         alt={props.name}
         width={400}
         height={400}
+        priority
         style={{
           width: '100%',
           height: '20rem',
