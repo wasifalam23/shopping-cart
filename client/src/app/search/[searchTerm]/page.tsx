@@ -1,5 +1,6 @@
 import Operations from '@/app/components/Operations';
 import getAllProducts from '@/lib/getAllProducts';
+import ProductList from '@/app/components/ProductList';
 
 type SearchResultsProps = {
   params: {
@@ -8,13 +9,14 @@ type SearchResultsProps = {
 };
 
 const SearchResults = async ({ params }: SearchResultsProps) => {
-  const productData: Promise<ProductData> = getAllProducts(params.searchTerm);
-  const data = await productData;
+  const productsData: Promise<ProductData> = getAllProducts(params.searchTerm);
+  const data = await productsData;
+  const products = data.data.products;
 
   return (
     <main>
       <Operations />
-      {`${JSON.stringify(data)}`}
+      <ProductList products={products} />
     </main>
   );
 };

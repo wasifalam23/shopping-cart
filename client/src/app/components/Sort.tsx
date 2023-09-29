@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 type SortOption = 'name' | '-name' | 'price' | '-price';
@@ -9,13 +9,6 @@ type SortOption = 'name' | '-name' | 'price' | '-price';
 const Sort = () => {
   const [sortValue, setSortValue] = useState<SortOption>('name');
   const router = useRouter();
-
-  const handleSortChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSortValue(event.target.value as SortOption);
-    console.log(sortValue);
-
-    router.push(`/sort/${sortValue}/`);
-  };
 
   const sortHandler = () => {
     router.push(`/sort/${sortValue}/`);
