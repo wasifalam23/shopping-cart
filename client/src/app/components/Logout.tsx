@@ -1,18 +1,24 @@
 'use client';
+
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import useHttp from '@/hooks/http-hook';
 import toast from 'react-hot-toast';
+import { uiActions } from '@/redux/slices/uiSlice';
 
 type Props = {};
 const Logout = (props: Props) => {
   const router = useRouter();
   const { sendRequest: logoutUser } = useHttp();
 
+  const dispatch = useDispatch();
+
   const logoutHandler = () => {
     const logoutStatus = (data: any) => {
       if (data.status === 'success') {
         router.push('/login');
         toast.success('You have successfully logged out');
+        dispatch(uiActions.setIsLoggedIn(undefined));
       } else {
         toast.error('Something went wrong!');
       }

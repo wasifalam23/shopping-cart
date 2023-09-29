@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/hooks/http-hook.js"
+    "src/hooks/http-hook.js",
+    "src/redux/StoreProvider.jsx"
   ],
   "exclude": ["node_modules"]
 }

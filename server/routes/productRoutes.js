@@ -5,8 +5,6 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-// router.use(authController.protect);
-
 router.use('/:productId/checkout', checkoutRoutes);
 
 router.route('/').get(productController.getAllProduct);

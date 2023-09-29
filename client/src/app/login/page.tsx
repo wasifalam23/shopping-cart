@@ -1,17 +1,21 @@
 'use client';
 
 import { FormEvent } from 'react';
+import { useDispatch } from 'react-redux';
 
 import useHttp from '@/hooks/http-hook';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
+import { uiActions } from '@/redux/slices/uiSlice';
 
 const SignUpPage = () => {
   const { sendRequest: loginUser, isLoading } = useHttp();
 
   const router = useRouter();
+
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
     email: '',
@@ -35,8 +39,10 @@ const SignUpPage = () => {
 
     const signedUpUserData = (data: any) => {
       if (data.status === 'success') {
-        toast.success('You have successfully logged in!');
         router.push('/');
+        toast.success('You have successfully logged in!');
+        console.log(data);
+        dispatch(uiActions.setIsLoggedIn(data));
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });
       }
