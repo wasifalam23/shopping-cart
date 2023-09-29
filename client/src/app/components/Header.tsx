@@ -10,16 +10,16 @@ const Header = (props: Props) => {
         <div className=" font-semibold text-xl">
           <Link href="/">Shopping-Cart</Link>
         </div>
-        <div>
-          <Search />
-          <Sort />
-        </div>
+        <div></div>
         <ul className="mr-6">
           <li>
             <Link href="/order-history">My Orders</Link>
           </li>
         </ul>
       </nav>
+
+      <Search />
+      <Sort />
     </header>
   );
 };

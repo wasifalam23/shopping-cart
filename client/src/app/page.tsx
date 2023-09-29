@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import getAllProducts from '@/lib/getAllProducts';
-import getProductImage from '@/lib/getProductImage';
+import ProductItem from './components/ProductItem';
 
 const Home = async () => {
   const productsData: Promise<ProductData> = getAllProducts('');
@@ -9,18 +9,15 @@ const Home = async () => {
 
   return (
     <main>
-      <Image
-        src="https://random.imagecdn.app/300/300"
-        alt="hello"
-        width={100}
-        height={100}
-      />
-      <ul>
+      <ul className="grid grid-cols-4 gap-8 px-8 my-8 max-w-screen-2xl mx-auto">
         {products.map((product) => (
-          <li key={product._id}>
-            <h2>{product.name}</h2>
-            <p>Price: ${product.price}</p>
-          </li>
+          <ProductItem
+            key={product._id}
+            id={product._id}
+            name={product.name}
+            price={product.price}
+            image={product.image}
+          />
         ))}
       </ul>
     </main>
