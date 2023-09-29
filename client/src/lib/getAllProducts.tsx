@@ -1,5 +1,7 @@
-const getAllProducts = async () => {
-  const res = await fetch('http://localhost:8000/api/v1/products');
+const getAllProducts = async (searchTerm: string, sortTerm?: string) => {
+  const res = await fetch(
+    `http://localhost:8000/api/v1/products?name=${searchTerm}&sort=${sortTerm}`
+  );
 
   if (!res.ok) throw new Error('failed to fetch data');
 

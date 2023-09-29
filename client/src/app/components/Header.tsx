@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Search from './Search';
+import Sort from './Sort';
 
 type Props = {};
 const Header = (props: Props) => {
@@ -7,6 +9,10 @@ const Header = (props: Props) => {
       <nav className="bg-gray-800 flex px-3 py-4 text-white justify-between">
         <div className=" font-semibold text-xl">
           <Link href="/">Shopping-Cart</Link>
+        </div>
+        <div>
+          <Search />
+          <Sort />
         </div>
         <ul className="mr-6">
           <li>
