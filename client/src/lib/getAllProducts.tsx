@@ -3,7 +3,7 @@ const getAllProducts = async (searchTerm: string, sortTerm?: string) => {
     `http://localhost:8000/api/v1/products?name=${searchTerm}&sort=${sortTerm}`
   );
 
-  if (!res.ok) throw new Error('failed to fetch data');
+  if (!res.ok) throw new Error('Failed to fetch data');
 
   return res.json();
 };
