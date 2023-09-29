@@ -1,3 +1,4 @@
+import Operations from '@/app/components/Operations';
 import getAllProducts from '@/lib/getAllProducts';
 
 type SearchResultsProps = {
@@ -10,7 +11,12 @@ const SearchResults = async ({ params }: SearchResultsProps) => {
   const productData: Promise<ProductData> = getAllProducts(params.searchTerm);
   const data = await productData;
 
-  return <div>{`${JSON.stringify(data)}`}</div>;
+  return (
+    <main>
+      <Operations />
+      {`${JSON.stringify(data)}`}
+    </main>
+  );
 };
 
 export default SearchResults;

@@ -17,9 +17,6 @@ const Header = (props: Props) => {
           </li>
         </ul>
       </nav>
-
-      <Search />
-      <Sort />
     </header>
   );
 };

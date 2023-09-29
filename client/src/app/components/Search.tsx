@@ -16,15 +16,18 @@ const Search = (props: Props) => {
   };
 
   return (
-    <form onSubmit={formSubmitHandler}>
+    <form onSubmit={formSubmitHandler} className="flex items-center gap-3">
       <input
         type="text"
-        placeholder="search by name"
-        className="text-black border border-black"
+        placeholder="Search by name"
+        className="text-black border border-black px-3 py-2 rounded-sm pr-6"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button type="submit" className="bg-gray-400">
+      <button
+        type="submit"
+        className="px-3 py-[.55rem] bg-gray-800 text-white rounded-sm"
+      >
         Search
       </button>
     </form>
