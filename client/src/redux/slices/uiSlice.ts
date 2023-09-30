@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isLoggedIn: undefined,
+  newCheckoutAdded: false,
 };
 
 const uiSlice = createSlice({
@@ -10,6 +11,10 @@ const uiSlice = createSlice({
   reducers: {
     setIsLoggedIn(state, action) {
       state.isLoggedIn = action.payload;
+    },
+
+    setNewCheckout(state) {
+      state.newCheckoutAdded = !state.newCheckoutAdded;
     },
   },
 });

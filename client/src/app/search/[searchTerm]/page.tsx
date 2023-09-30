@@ -1,6 +1,7 @@
 import Operations from '@/app/components/Operations';
 import getAllProducts from '@/lib/getAllProducts';
 import ProductList from '@/app/components/ProductList';
+import BackToProdBtn from '@/app/components/BackToProdBtn';
 
 type Props = {
   params: {
@@ -14,8 +15,9 @@ const SearchResults = async ({ params }: Props) => {
   const products = data.data.products;
 
   return (
-    <main>
+    <main className="max-w-screen-2xl mx-auto px-8">
       <Operations />
+      <BackToProdBtn className="mb-4" />
       <ProductList products={products} />
     </main>
   );

@@ -8,7 +8,7 @@ const Home = async () => {
   const products = data.data.products;
 
   return (
-    <main>
+    <main className="max-w-screen-2xl mx-auto px-8">
       <Operations />
       <ProductList products={products} />
     </main>

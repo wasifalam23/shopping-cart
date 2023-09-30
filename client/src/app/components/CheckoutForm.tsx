@@ -1,5 +1,7 @@
 'use client';
 
+import { useDispatch } from 'react-redux';
+import { uiActions } from '@/redux/slices/uiSlice';
 import { FormEvent, useState, useEffect } from 'react';
 import useHttp from '@/hooks/http-hook';
 import toast from 'react-hot-toast';
@@ -18,6 +20,8 @@ const CheckoutForm = (props: Props) => {
     expiryDate: '',
     cvv: '',
   });
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (
@@ -51,6 +55,7 @@ const CheckoutForm = (props: Props) => {
       if (data.status === 'success') {
         resetForm();
         toast.success('Checkout is successful!');
+        dispatch(uiActions.setNewCheckout());
         console.log(data);
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });

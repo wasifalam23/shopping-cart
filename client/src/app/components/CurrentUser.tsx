@@ -12,6 +12,9 @@ function CurrentUser({}: Props) {
   const { sendRequest: getCurrentUser } = useHttp();
 
   const dispatch = useDispatch();
+  const newCheckoutAdded = useSelector(
+    (state: any) => state.ui.newCheckoutAdded
+  );
 
   useEffect(() => {
     const signedUpUserData = (data: any) => {
@@ -28,7 +31,7 @@ function CurrentUser({}: Props) {
     };
 
     getCurrentUser(reqConfig, signedUpUserData);
-  }, [getCurrentUser, dispatch]);
+  }, [getCurrentUser, dispatch, newCheckoutAdded]);
 
   return <p>&nbsp;</p>;
 }
