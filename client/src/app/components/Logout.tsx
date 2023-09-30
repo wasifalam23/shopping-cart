@@ -18,7 +18,7 @@ const Logout = (props: Props) => {
       if (data.status === 'success') {
         router.push('/login');
         toast.success('You have successfully logged out');
-        dispatch(uiActions.setIsLoggedIn(undefined));
+        dispatch(uiActions.setIsLoggedIn(false));
       } else {
         toast.error('Something went wrong!');
       }

@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isLoggedIn: undefined,
+  isLoggedIn: false,
+  currUserData: {},
   newCheckoutAdded: false,
 };
 
@@ -15,6 +16,10 @@ const uiSlice = createSlice({
 
     setNewCheckout(state) {
       state.newCheckoutAdded = !state.newCheckoutAdded;
+    },
+
+    setCurrUserData(state, action) {
+      state.currUserData = action.payload;
     },
   },
 });

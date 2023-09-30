@@ -6,7 +6,7 @@ import BackToProdBtn from '../components/BackToProdBtn';
 
 type Props = {};
 const OrderHistory = (props: Props) => {
-  const user = useSelector((state: any) => state.ui.isLoggedIn);
+  const user = useSelector((state: any) => state.ui.currUserData);
 
   const userData = user?.data?.user.orderHistory;
 

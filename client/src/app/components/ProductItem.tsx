@@ -29,7 +29,7 @@ const ProductItem = (props: Props) => {
         <p>Price: ${props.price}</p>
         <Link
           href={`/checkout/${props.id}`}
-          className="bg-yellow-300 px-3 py-1 rounded-sm mt-3 text-gray-800"
+          className="bg-yellow-300 px-3 py-1 rounded-sm mt-3 text-gray-800 hover:bg-yellow-400"
         >
           Buy Now
         </Link>

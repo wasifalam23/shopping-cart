@@ -6,9 +6,7 @@ import { uiActions } from '@/redux/slices/uiSlice';
 import useHttp from '@/hooks/http-hook';
 import { useEffect, useState } from 'react';
 
-type Props = {};
-function CurrentUser({}: Props) {
-  const [currUser, setCurrUser] = useState('');
+const CurrentUser = () => {
   const { sendRequest: getCurrentUser } = useHttp();
 
   const dispatch = useDispatch();
@@ -19,8 +17,8 @@ function CurrentUser({}: Props) {
   useEffect(() => {
     const signedUpUserData = (data: any) => {
       if (data.status === 'success') {
-        setCurrUser(data.data.user.name);
-        dispatch(uiActions.setIsLoggedIn(data));
+        dispatch(uiActions.setIsLoggedIn(true));
+        dispatch(uiActions.setCurrUserData(data));
       } else if (data.status === 'fail') {
         console.log(data.message);
       }
@@ -34,6 +32,6 @@ function CurrentUser({}: Props) {
   }, [getCurrentUser, dispatch, newCheckoutAdded]);
 
   return <p>&nbsp;</p>;
-}
+};
 
 export default CurrentUser;

@@ -7,23 +7,24 @@ import Link from 'next/link';
 
 type Props = {};
 const NavLinks = (props: Props) => {
-  const user = useSelector((state: any) => state.ui.isLoggedIn);
+  const user = useSelector((state: any) => state.ui.currUserData);
+  const isLoggedIn = useSelector((state: any) => state.ui.isLoggedIn);
 
   return (
     <ul className="mr-6 flex gap-6 items-center">
-      {user && (
+      {isLoggedIn && (
         <li>
           <Link href="/order-history">My Orders</Link>
         </li>
       )}
 
-      {user && (
+      {isLoggedIn && (
         <li>
           <Logout />
         </li>
       )}
 
-      {user && (
+      {isLoggedIn && (
         <li>
           <p className="text-yellow-300">{user?.data?.user.name}</p>
         </li>

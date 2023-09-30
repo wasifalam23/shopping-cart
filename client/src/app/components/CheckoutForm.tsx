@@ -10,7 +10,7 @@ type Props = {
   productId: string;
 };
 const CheckoutForm = (props: Props) => {
-  const { sendRequest: checkoutUser } = useHttp();
+  const { sendRequest: checkoutUser, isLoading } = useHttp();
 
   const [formValid, setFormValid] = useState(false);
   const [checkoutData, setCheckoutData] = useState({
@@ -144,9 +144,13 @@ const CheckoutForm = (props: Props) => {
 
       <button
         type="submit"
-        className="bg-yellow-300 px-2 py-2 font-medium rounded-sm"
+        className={`${
+          isLoading
+            ? 'bg-gray-200 pointer-events-none'
+            : 'bg-yellow-300 hover:bg-yellow-400'
+        } px-2 py-2 font-medium rounded-sm `}
       >
-        Checkout Now
+        {isLoading ? 'Please wait...' : 'Checkout Now'}
       </button>
     </form>
   );

@@ -48,7 +48,7 @@ const SignUpPage = () => {
       if (data.status === 'success') {
         router.push('/');
         toast.success('You have successfully signed in!');
-        dispatch(uiActions.setIsLoggedIn(data));
+        dispatch(uiActions.setIsLoggedIn(true));
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });
       }
@@ -114,9 +114,13 @@ const SignUpPage = () => {
 
         <button
           type="submit"
-          className="p-2 border bg-gray-800 text-white border-gray-800 rounded-lg mb-4 focus:outline-none focus:border-gray-600 w-full"
+          className={`p-2 border ${
+            isLoading
+              ? 'pointer-events-none bg-gray-200 text-gray-800 border-none'
+              : 'bg-gray-800 text-white border-gray-800'
+          }    rounded-lg mb-4 focus:outline-none focus:border-gray-600 w-full hover:bg-gray-900`}
         >
-          Signup
+          {isLoading ? 'Please wait...' : 'Signup'}
         </button>
         <Link href="/login" className="text-sm underline">
           Visit login page

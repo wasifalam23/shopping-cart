@@ -41,8 +41,7 @@ const SignUpPage = () => {
       if (data.status === 'success') {
         router.push('/');
         toast.success('You have successfully logged in!');
-        console.log(data);
-        dispatch(uiActions.setIsLoggedIn(data));
+        dispatch(uiActions.setIsLoggedIn(true));
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });
       }
@@ -66,9 +65,7 @@ const SignUpPage = () => {
         className="shadow-md px-6 py-4 rounded-sm"
         onSubmit={formSubmitHandler}
       >
-        <h1 className="text-lg mb-4 font-semibold">
-          {isLoading ? 'Processing' : 'Login'}
-        </h1>
+        <h1 className="text-lg mb-4 font-semibold">Login</h1>
 
         <div className="flex flex-col">
           <input
@@ -92,9 +89,13 @@ const SignUpPage = () => {
 
         <button
           type="submit"
-          className="p-2 border bg-gray-800 text-white border-gray-800 rounded-lg mb-4 focus:outline-none focus:border-gray-600 w-full"
+          className={`p-2 border ${
+            isLoading
+              ? 'pointer-events-none bg-gray-200 text-gray-800 border-none'
+              : 'bg-gray-800 text-white border-gray-800'
+          }    rounded-lg mb-4 focus:outline-none focus:border-gray-600 w-full hover:bg-gray-900`}
         >
-          Login
+          {isLoading ? 'Please wait...' : 'Login'}
         </button>
         <Link href="/signup" className="text-sm underline">
           Visit signup page

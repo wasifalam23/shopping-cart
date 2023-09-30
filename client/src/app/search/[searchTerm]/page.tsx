@@ -18,7 +18,11 @@ const SearchResults = async ({ params }: Props) => {
     <main className="max-w-screen-2xl mx-auto px-8">
       <Operations />
       <BackToProdBtn className="mb-4" />
-      <ProductList products={products} />
+      {products.length === 0 ? (
+        <p className="text-center mt-6 text-xl">😞 No result found!</p>
+      ) : (
+        <ProductList products={products} />
+      )}
     </main>
   );
 };
