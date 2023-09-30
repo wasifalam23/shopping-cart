@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.use('/:productId/checkout', checkoutRoutes);
 
+router.use(authController.protect);
+
 router.route('/').get(productController.getAllProduct);
 router.route('/:id').get(productController.getProductById);
 

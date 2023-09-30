@@ -2,6 +2,7 @@
 
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
+import BackToProdBtn from '../components/BackToProdBtn';
 
 type Props = {};
 const OrderHistory = (props: Props) => {
@@ -10,7 +11,8 @@ const OrderHistory = (props: Props) => {
   const userData = user?.data?.user.orderHistory;
 
   return (
-    <main className="max-w-7xl mx-auto mt-16">
+    <main className="max-w-7xl mx-auto mt-16 mb-10">
+      <BackToProdBtn className="mb-6" />
       <h3 className="mb-8 font-semibold text-lg">My Order History</h3>
       <div className=" relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500">
