@@ -2,13 +2,13 @@ import Operations from '@/app/components/Operations';
 import getAllProducts from '@/lib/getAllProducts';
 import ProductList from '@/app/components/ProductList';
 
-type SearchResultsProps = {
+type Props = {
   params: {
     searchTerm: string;
   };
 };
 
-const SearchResults = async ({ params }: SearchResultsProps) => {
+const SearchResults = async ({ params }: Props) => {
   const productsData: Promise<ProductData> = getAllProducts(params.searchTerm);
   const data = await productsData;
   const products = data.data.products;

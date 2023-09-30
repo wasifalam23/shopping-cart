@@ -1,5 +1,6 @@
 const Product = require('../models/productModel');
 const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getAllProduct = catchAsync(async (req, res, next) => {
   // 1) Filtering

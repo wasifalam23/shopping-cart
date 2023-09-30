@@ -8,7 +8,6 @@ import Link from 'next/link';
 type Props = {};
 const NavLinks = (props: Props) => {
   const user = useSelector((state: any) => state.ui.isLoggedIn);
-  console.log(user);
 
   return (
     <ul className="mr-6 flex gap-6 items-center">

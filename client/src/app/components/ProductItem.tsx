@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import BuyNowBtn from './BuyNowBtn';
 
 type Props = {
   id: string;
@@ -26,9 +28,12 @@ const ProductItem = (props: Props) => {
       <div className="px-6 py-3 pb-6 flex items-center justify-center flex-col">
         <h2 className="text-xl">{props.name}</h2>
         <p>Price: ${props.price}</p>
-        <button className="bg-yellow-300 px-3 py-1 rounded-sm mt-3 text-gray-800">
+        <Link
+          href={`/checkout/${props.id}`}
+          className="bg-yellow-300 px-3 py-1 rounded-sm mt-3 text-gray-800"
+        >
           Buy Now
-        </button>
+        </Link>
       </div>
     </li>
   );

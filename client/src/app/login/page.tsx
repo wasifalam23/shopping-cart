@@ -32,7 +32,7 @@ const SignUpPage = () => {
     }
   }, [user]);
 
-  const formSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
+  const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formValid) return;
