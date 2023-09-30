@@ -56,7 +56,6 @@ const CheckoutForm = (props: Props) => {
         resetForm();
         toast.success('Checkout is successful!');
         dispatch(uiActions.setNewCheckout());
-        console.log(data);
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });
       }

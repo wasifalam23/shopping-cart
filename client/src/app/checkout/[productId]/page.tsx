@@ -1,11 +1,10 @@
-'use client';
-
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import useHttp from '@/hooks/http-hook';
 import toast from 'react-hot-toast';
 import CheckoutForm from '@/app/components/CheckoutForm';
 import BackToProdBtn from '@/app/components/BackToProdBtn';
+import getProductById from '@/lib/getProductById';
 
 type Props = {
   params: {
@@ -22,30 +21,10 @@ type Product = {
 const backupImg =
   'https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
 
-const CheckoutPage = ({ params }: Props) => {
-  const [product, setProduct] = useState<Product>({
-    name: '',
-    price: 0,
-    image: '',
-  });
-
-  const { sendRequest: getProductById } = useHttp();
-
-  useEffect(() => {
-    const productData = (data: any) => {
-      if (data.status === 'success') {
-        setProduct(data.data.product);
-      } else if (data.status === 'fail') {
-        toast.error(data.message, { duration: 3000 });
-      }
-    };
-
-    const reqConfig = {
-      url: `http://localhost:8000/api/v1/products/${params.productId}`,
-    };
-
-    getProductById(reqConfig, productData);
-  }, [getProductById, params.productId]);
+const CheckoutPage = async ({ params }: Props) => {
+  const productData: Promise<any> = getProductById(params.productId);
+  const data = await productData;
+  const product = data.data.product;
 
   return (
     <main className="max-w-7xl mx-auto mt-14 px-6">
