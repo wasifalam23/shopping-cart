@@ -25,7 +25,7 @@ const Logout = () => {
 
     logoutUser(
       {
-        url: process.env.NEXT_PUBLIC + '/api/v1/users/logout',
+        url: process.env.NEXT_PUBLIC_NODE_URL + '/api/v1/users/logout',
       },
       logoutStatus
     );

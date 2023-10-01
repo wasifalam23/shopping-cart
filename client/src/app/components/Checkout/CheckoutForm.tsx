@@ -69,7 +69,8 @@ const CheckoutForm = (props: Props) => {
 
     const reqConfig = {
       url:
-        process.env.NODE_URL + `/api/v1/products/${props.productId}/checkout`,
+        process.env.NEXT_PUBLIC_NODE_URL +
+        `/api/v1/products/${props.productId}/checkout`,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

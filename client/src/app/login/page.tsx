@@ -48,7 +48,7 @@ const SignUpPage = () => {
     };
 
     const reqConfig = {
-      url: process.env.NEXT_PUBLIC + '/api/v1/users/login',
+      url: process.env.NEXT_PUBLIC_NODE_URL + '/api/v1/users/login',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
