@@ -31,6 +31,13 @@ const Logout = () => {
     );
   };
 
-  return <button onClick={logoutHandler}>Logout</button>;
+  return (
+    <button
+      className=" max-md:pb-3 pt-0 max-md:mr-auto"
+      onClick={logoutHandler}
+    >
+      Logout
+    </button>
+  );
 };
 export default Logout;
