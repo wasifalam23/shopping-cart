@@ -10,7 +10,7 @@ type Props = {
 };
 
 const SearchResults = async ({ params }: Props) => {
-  const productsData: Promise<ProductData> = getAllProducts(params.searchTerm);
+  const productsData: Promise<ProductsData> = getAllProducts(params.searchTerm);
   const data = await productsData;
   const products = data.data.products;
 

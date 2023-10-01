@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '@/redux/slices/uiSlice';
 
 import useHttp from '@/hooks/http-hook';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const CurrentUser = () => {
   const { sendRequest: getCurrentUser } = useHttp();
 
   const dispatch = useDispatch();
   const newCheckoutAdded = useSelector(
-    (state: any) => state.ui.newCheckoutAdded
+    (state: { ui: ReduxUiState }) => state.ui.newCheckoutAdded
   );
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const CurrentUser = () => {
         dispatch(uiActions.setIsLoggedIn(true));
         dispatch(uiActions.setCurrUserData(data));
       } else if (data.status === 'fail') {
+        dispatch(uiActions.setIsLoggedIn(false));
         console.log(data.message);
       }
     };

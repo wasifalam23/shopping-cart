@@ -4,7 +4,7 @@ import Operations from './components/Operations';
 import CurrentUser from './components/CurrentUser';
 
 const Home = async () => {
-  const productsData: Promise<ProductData> = getAllProducts('');
+  const productsData: Promise<ProductsData> = getAllProducts('');
   const data = await productsData;
   const products = data.data.products;
 

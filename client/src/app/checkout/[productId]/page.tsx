@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import useHttp from '@/hooks/http-hook';
-import toast from 'react-hot-toast';
 import CheckoutForm from '@/app/components/CheckoutForm';
 import BackToProdBtn from '@/app/components/BackToProdBtn';
 import getProductById from '@/lib/getProductById';
@@ -12,17 +9,11 @@ type Props = {
   };
 };
 
-type Product = {
-  name: string;
-  price: number;
-  image: string;
-};
-
 const backupImg =
   'https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
 
 const CheckoutPage = async ({ params }: Props) => {
-  const productData: Promise<any> = getProductById(params.productId);
+  const productData: Promise<ProductData> = getProductById(params.productId);
   const data = await productData;
   const product = data.data.product;
 

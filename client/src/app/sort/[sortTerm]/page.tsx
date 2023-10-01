@@ -10,7 +10,7 @@ type Props = {
 };
 
 const SortResults = async ({ params }: Props) => {
-  const productsData: Promise<ProductData> = getAllProducts(
+  const productsData: Promise<ProductsData> = getAllProducts(
     '',
     params.sortTerm
   );

@@ -13,6 +13,11 @@ const checkoutSchema = new mongoose.Schema({
     required: [true, 'A checkout must have a product'],
   },
 
+  orderedAt: {
+    type: Date,
+    default: Date.now,
+  },
+
   shippingAddress: {
     type: String,
     required: [true, 'Please enter a shippingAddress'],
