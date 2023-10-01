@@ -5,7 +5,7 @@ type Props = {
 };
 const ProductList = (props: Props) => {
   return (
-    <ul className="grid grid-cols-4 gap-8 mb-8 ">
+    <ul className="grid grid-cols-4 gap-8 mb-8 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
       {props.products.map((product) => (
         <ProductItem
           key={product._id}

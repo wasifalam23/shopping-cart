@@ -12,7 +12,7 @@ const OrderHistory = () => {
   const orderData = user?.data?.user.orderHistory;
 
   return (
-    <main className="max-w-7xl mx-auto mt-16 mb-10">
+    <main className="max-w-7xl mx-auto mt-16 mb-10 px-6 max-lg:mt-10">
       <BackToProdBtn className="mb-6" />
       <h3 className="mb-8 font-semibold text-lg">My Order History</h3>
       <div className=" relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -39,18 +39,20 @@ const OrderHistory = () => {
           </thead>
           <tbody>
             {orderData &&
-              orderData.map((order: OrderHistory) => {
-                return (
-                  <TableRowItem
-                    key={order._id}
-                    image={order.product.image}
-                    name={order.product.name}
-                    price={order.product.price}
-                    address={order.shippingAddress}
-                    orderedAt={order.orderedAt}
-                  />
-                );
-              })}
+              orderData
+                .map((order: OrderHistory) => {
+                  return (
+                    <TableRowItem
+                      key={order._id}
+                      image={order.product.image}
+                      name={order.product.name}
+                      price={order.product.price}
+                      address={order.shippingAddress}
+                      orderedAt={order.orderedAt}
+                    />
+                  );
+                })
+                .reverse()}
           </tbody>
         </table>
       </div>

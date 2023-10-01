@@ -10,7 +10,7 @@ type Props = {
 };
 
 const resultText = (text: string) => (
-  <p className="text-center my-6 text-xl">{text}</p>
+  <p className="text-center my-6 text-lg">{text}</p>
 );
 
 const SearchResults = async ({ params }: Props) => {

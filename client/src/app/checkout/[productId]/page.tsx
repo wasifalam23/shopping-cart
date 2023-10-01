@@ -18,22 +18,24 @@ const CheckoutPage = async ({ params }: Props) => {
   const product = data.data.product;
 
   return (
-    <main className="max-w-7xl mx-auto mt-14 px-6">
+    <main className="max-w-7xl mx-auto mt-14 px-6 mb-8">
       <BackToProdBtn className="mb-6 pl-0" />
-      <div className="grid grid-cols-2 gap-8">
-        <div className="flex flex-col items-center rounded-sm shadow-md pb-4 pt-2 w-max px-6">
-          <Image
-            src={product.image ? product.image : backupImg}
-            alt={product.name}
-            width={500}
-            height={500}
-            priority
-            style={{
-              width: '26rem',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
+      <div className="grid grid-cols-2 gap-8 max-lg:grid-cols-1">
+        <div className="flex flex-col items-center rounded-sm shadow-md pb-4 pt-2 w-max px-6 max-lg:justify-self-center max-lg:mb-8">
+          <div className="w-96">
+            <Image
+              src={product.image ? product.image : backupImg}
+              alt={product.name}
+              width={500}
+              height={500}
+              priority
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </div>
           <div className="flex flex-col mt-4 items-center">
             <p className="font-medium text-xl text-gray-800">{product.name}</p>
             <p className="font-medium text-gray-800">Price: ${product.price}</p>

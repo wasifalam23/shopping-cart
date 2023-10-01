@@ -18,13 +18,13 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search by name"
-        className="text-black border border-black px-3 py-2 rounded-sm pr-6"
+        className="text-black border border-black px-3 py-2 rounded-sm pr-6 max-md:text-sm"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
       <button
         type="submit"
-        className="px-3 py-[.55rem] bg-gray-800 text-white rounded-sm"
+        className="px-3 py-[.55rem] bg-gray-800 text-white rounded-sm max-md:py-[.6rem] max-md:text-sm"
       >
         Search
       </button>

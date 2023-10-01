@@ -30,7 +30,7 @@ const ModalOverlay = (props: Props) => {
           className=" px-2 py-1 rounded-sm bg-gray-300 hover:bg-gray-400"
           type="button"
         >
-          Cancel
+          Okay
         </button>
       </footer>
     </div>

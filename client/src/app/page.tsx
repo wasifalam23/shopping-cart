@@ -9,7 +9,7 @@ const Home = async () => {
   const products = data.data.products;
 
   return (
-    <main className="max-w-screen-2xl mx-auto px-8">
+    <main className="max-w-screen-2xl mx-auto px-6">
       <Operations />
       <ProductList products={products} />
       <CurrentUser />

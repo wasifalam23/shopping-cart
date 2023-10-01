@@ -16,9 +16,11 @@ const Sort = () => {
 
   return (
     <div>
-      <label htmlFor="sort-select">Sort by: &nbsp;</label>
+      <label htmlFor="sort-select" className="max-md:text-sm">
+        Sort by: &nbsp;
+      </label>
       <select
-        className="bg-gray-300 px-2 py-[.33rem] text-gray-800 rounded-sm"
+        className="bg-gray-300 px-2 py-[.33rem] text-gray-800 rounded-sm max-md:text-sm max-md:py-[.25rem] max-md:px-1"
         id="sort-select"
         value={sortValue}
         onChange={(e) => setSortValue(e.target.value as SortOption)}
@@ -35,7 +37,7 @@ const Sort = () => {
       </select>
       <button
         onClick={sortHandler}
-        className="bg-gray-800 text-white ml-3 px-2 py-1 rounded-sm"
+        className="bg-gray-800 text-white ml-3 px-2 py-1 rounded-sm max-md:text-sm"
       >
         Sort
       </button>
