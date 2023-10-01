@@ -40,7 +40,7 @@ To run this application locally, follow the steps below for both the server and 
 2. Create a `.env` file in the root of the client component.
 
 Example `.env` content:
-```bash
+```env
 NEXT_PUBLIC_NODE_URL='http://localhost:8000' # Make sure this matches the port the server is running on
 ```
 
