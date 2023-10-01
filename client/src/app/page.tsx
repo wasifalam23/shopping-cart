@@ -1,7 +1,7 @@
 import getAllProducts from '@/lib/getAllProducts';
-import ProductList from './components/ProductList';
-import Operations from './components/Operations';
-import CurrentUser from './components/CurrentUser';
+import ProductList from './components/Products/ProductList';
+import Operations from './components/Operations/Operations';
+import CurrentUser from './components/utils/CurrentUser';
 
 const Home = async () => {
   const productsData: Promise<ProductsData> = getAllProducts('');

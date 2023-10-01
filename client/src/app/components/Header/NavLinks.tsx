@@ -1,9 +1,8 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-
-import Logout from './Logout';
 import Link from 'next/link';
+import Logout from './Logout';
 
 type Props = {};
 const NavLinks = (props: Props) => {

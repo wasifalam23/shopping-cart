@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import CheckoutForm from '@/app/components/CheckoutForm';
-import BackToProdBtn from '@/app/components/BackToProdBtn';
+import CheckoutForm from '@/app/components/Checkout/CheckoutForm';
+import BackToProdBtn from '@/app/components/utils/BackToProdBtn';
 import getProductById from '@/lib/getProductById';
 
 type Props = {

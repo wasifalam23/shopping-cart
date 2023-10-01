@@ -1,11 +1,10 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-import BackToProdBtn from '../components/BackToProdBtn';
-import TableRowItem from '../components/TableRowItem';
+import BackToProdBtn from '../components/utils/BackToProdBtn';
+import TableRowItem from '../components/Order/TableRowItem';
 
-type Props = {};
-const OrderHistory = (props: Props) => {
+const OrderHistory = () => {
   const user = useSelector(
     (state: { ui: ReduxUiState }) => state.ui.currUserData
   );

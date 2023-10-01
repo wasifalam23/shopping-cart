@@ -1,4 +1,4 @@
-import CurrentUser from './CurrentUser';
+import CurrentUser from '../utils/CurrentUser';
 import NavLinks from './NavLinks';
 
 type Props = {};

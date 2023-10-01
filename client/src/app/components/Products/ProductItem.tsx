@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-type Props = {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-};
+type Props = Product;
 
 const ProductItem = (props: Props) => {
   return (
@@ -28,7 +23,7 @@ const ProductItem = (props: Props) => {
         <h2 className="text-xl">{props.name}</h2>
         <p>Price: ${props.price}</p>
         <Link
-          href={`/checkout/${props.id}`}
+          href={`/checkout/${props._id}`}
           className="bg-yellow-300 px-3 py-1 rounded-sm mt-3 text-gray-800 hover:bg-yellow-400"
         >
           Buy Now

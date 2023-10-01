@@ -1,7 +1,7 @@
 import getAllProducts from '@/lib/getAllProducts';
-import Operations from '@/app/components/Operations';
-import ProductList from '@/app/components/ProductList';
-import BackToProdBtn from '@/app/components/BackToProdBtn';
+import Operations from '@/app/components/Operations/Operations';
+import ProductList from '@/app/components/Products/ProductList';
+import BackToProdBtn from '@/app/components/utils/BackToProdBtn';
 
 type Props = {
   params: {

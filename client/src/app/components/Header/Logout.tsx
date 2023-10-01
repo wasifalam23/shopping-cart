@@ -6,8 +6,7 @@ import useHttp from '@/hooks/http-hook';
 import toast from 'react-hot-toast';
 import { uiActions } from '@/redux/slices/uiSlice';
 
-type Props = {};
-const Logout = (props: Props) => {
+const Logout = () => {
   const router = useRouter();
   const { sendRequest: logoutUser } = useHttp();
 

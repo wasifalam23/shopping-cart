@@ -3,9 +3,7 @@
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-type Props = {};
-
-const Search = (props: Props) => {
+const Search = () => {
   const [input, setInput] = useState('');
   const router = useRouter();
 
