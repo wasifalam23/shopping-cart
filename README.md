@@ -28,11 +28,11 @@ To run this application locally, follow the steps below for both the server and 
 3. Load the development data into the `products` collection in your MongoDB database. You can find the data in the `dev-data/products.json` file located in the root folder of server component.
 
 4. Run the server using one of the following commands:
-- For production:
+- For tesing this app:
   ```bash
   npm run start:prod
   
-- For testing the API only in development mode (such as postman):
+- For testing the API only in development mode:
   ```bash
   npm start
 
