@@ -17,10 +17,8 @@ const CurrentUser = () => {
   useEffect(() => {
     const signedUpUserData = (data: any) => {
       if (data.status === 'success') {
-        dispatch(uiActions.setIsLoggedIn(true));
         dispatch(uiActions.setCurrUserData(data));
       } else if (data.status === 'fail') {
-        dispatch(uiActions.setIsLoggedIn(false));
         console.log(data.message);
       }
     };

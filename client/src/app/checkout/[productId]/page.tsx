@@ -21,8 +21,8 @@ const CheckoutPage = async ({ params }: Props) => {
     <main className="max-w-7xl mx-auto mt-14 px-6 mb-8">
       <BackToProdBtn className="mb-6 pl-0" />
       <div className="grid grid-cols-2 gap-8 max-lg:grid-cols-1">
-        <div className="flex flex-col items-center rounded-sm shadow-md pb-4 pt-2 w-max px-6 max-lg:justify-self-center max-lg:mb-8">
-          <div className="w-96">
+        <div className="flex flex-col items-center rounded-sm shadow-md pb-4 px-6 pt-2 w-max max-lg:justify-self-center max-lg:mb-8">
+          <div className="w-96 max-md:w-80">
             <Image
               src={product.image ? product.image : backupImg}
               alt={product.name}

@@ -11,8 +11,6 @@ type Props = {
 const TableRowItem = (props: Props) => {
   const orderedDate = moment(props.orderedAt).format('Do MMM YYYY');
 
-  console.log(props.image);
-
   return (
     <tr className="bg-white border-b">
       <td className=" p-4">

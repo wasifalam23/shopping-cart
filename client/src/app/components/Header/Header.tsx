@@ -1,4 +1,8 @@
 'use client';
+import { useEffect } from 'react';
+import useHttp from '@/hooks/http-hook';
+import { useDispatch } from 'react-redux';
+import { uiActions } from '@/redux/slices/uiSlice';
 
 import { Navbar } from 'flowbite-react';
 import { useSelector } from 'react-redux';
@@ -7,6 +11,9 @@ import CurrentUser from '../utils/CurrentUser';
 import Link from 'next/link';
 
 export default function Header() {
+  const { sendRequest: getIsLoggedInState } = useHttp();
+  const dispatch = useDispatch();
+
   const user = useSelector(
     (state: { ui: ReduxUiState }) => state.ui.currUserData
   );
@@ -14,9 +21,21 @@ export default function Header() {
     (state: { ui: ReduxUiState }) => state.ui.isLoggedIn
   );
 
+  useEffect(() => {
+    const loggedInState = (data: any) => {
+      dispatch(uiActions.setIsLoggedIn(data));
+    };
+
+    const reqConfig = {
+      url: 'http://localhost:8000/api/v1/users/isLoggedIn',
+    };
+
+    getIsLoggedInState(reqConfig, loggedInState);
+  }, [getIsLoggedInState, dispatch]);
+
   return (
     <>
-      <Navbar className="bg-gray-800 py-4">
+      <Navbar className="bg-gray-800 py-4 px-6">
         <Navbar.Brand>
           <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
             Shipping-Cart
