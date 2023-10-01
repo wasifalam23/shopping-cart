@@ -5,7 +5,8 @@ const getAllProducts = async (searchTerm: string, sortTerm?: string) => {
   const token = cookieStore.get('jwt');
 
   const res = await fetch(
-    `http://localhost:8000/api/v1/products?name=${searchTerm}&sort=${sortTerm}`,
+    process.env.NEXT_PUBLIC_NODE_URL +
+      `/api/v1/products?name=${searchTerm}&sort=${sortTerm}`,
     {
       headers: {
         Authorization: `Bearer ${token?.value}`,

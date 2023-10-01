@@ -24,7 +24,7 @@ const CurrentUser = () => {
     };
 
     const reqConfig = {
-      url: 'http://localhost:8000/api/v1/users/me',
+      url: process.env.NEXT_PUBLIC_NODE_URL + '/api/v1/users/me',
     };
 
     getCurrentUser(reqConfig, signedUpUserData);

@@ -55,7 +55,7 @@ const SignUpPage = () => {
     };
 
     const reqConfig = {
-      url: 'http://localhost:8000/api/v1/users/signup',
+      url: process.env.NEXT_PUBLIC + '/api/v1/users/signup',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

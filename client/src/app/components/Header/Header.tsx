@@ -27,7 +27,7 @@ export default function Header() {
     };
 
     const reqConfig = {
-      url: 'http://localhost:8000/api/v1/users/isLoggedIn',
+      url: process.env.NEXT_PUBLIC_NODE_URL + '/api/v1/users/isLoggedIn',
     };
 
     getIsLoggedInState(reqConfig, loggedInState);

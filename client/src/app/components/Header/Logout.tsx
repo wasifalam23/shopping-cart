@@ -25,7 +25,7 @@ const Logout = () => {
 
     logoutUser(
       {
-        url: 'http://localhost:8000/api/v1/users/logout',
+        url: process.env.NEXT_PUBLIC + '/api/v1/users/logout',
       },
       logoutStatus
     );
