@@ -48,7 +48,7 @@ To run this application locally, follow the steps below for both the server and 
 
 ### Client Setup
 
-1. Navigate to the root of the server component and run the following command to install dependencies:
+1. Navigate to the root of the client component and run the following command to install dependencies:
 
    ```bash
    npm install
