@@ -34,9 +34,7 @@ To run this application locally, follow the steps below for both the server and 
 Example `.env` content:
 ```env
 NEXT_PUBLIC_NODE_URL='http://localhost:8000' # Make sure this matches the port the server is running on
-
+```
 
 2. Run the client server using the following command:
 -  Run the next app: npm run dev
-
-
