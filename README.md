@@ -34,7 +34,7 @@ To run this application locally, follow the steps below for both the server and 
 
 4. Run the server using one of the following commands:
 
-- For tesing this app (to get proper error response):
+- For testing with the next app (with proper error response):
 
   ```bash
   npm run start:prod
