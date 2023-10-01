@@ -8,7 +8,11 @@ To run this application locally, follow the steps below for both the server and 
 
 ### Server Setup
 
-1. Create a `config.env` file in the root of the server component.
+1. After cloning the repository, navigate to the root of the server component and run the following command to install dependencies:
+   ```bash
+   npm install
+
+2. Create a `config.env` file in the root of the server component.
 
    Example `config.env` content:
    ```env
@@ -21,20 +25,24 @@ To run this application locally, follow the steps below for both the server and 
    JWT_COOKIE_EXPIRES_IN=7
 
 
-2. Load the development data into the `products` collection in your MongoDB database. You can find the data in the `dev-data/products.json` file located in the root folder of server component.
+3. Load the development data into the `products` collection in your MongoDB database. You can find the data in the `dev-data/products.json` file located in the root folder of server component.
 
-3. Run the server using one of the following commands:
+4. Run the server using one of the following commands:
 - For production: `npm run start:prod`
 - For testing the API only in development mode (such as postman): `npm start`
 
 ### Client Setup
 
-1. Create a `.env` file in the root of the client component.
+1. After cloning the repository, navigate to the root of the server component and run the following command to install dependencies:
+   ```bash
+   npm install
+
+2. Create a `.env` file in the root of the client component.
 
 Example `.env` content:
-```env
+```bash
 NEXT_PUBLIC_NODE_URL='http://localhost:8000' # Make sure this matches the port the server is running on
 ```
 
-2. Run the client server using the following command:
+3. Run the client server using the following command:
 -  Run the next app: npm run dev
