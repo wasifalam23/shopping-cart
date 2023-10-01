@@ -2,15 +2,17 @@
 
 import { useDispatch } from 'react-redux';
 import { uiActions } from '@/redux/slices/uiSlice';
-import { FormEvent, useState, useEffect } from 'react';
+import React, { FormEvent, useState, useEffect } from 'react';
 import useHttp from '@/hooks/http-hook';
 import toast from 'react-hot-toast';
+import Modal from '../utils/Modal';
 
 type Props = {
   productId: string;
 };
 const CheckoutForm = (props: Props) => {
   const { sendRequest: checkoutUser, isLoading } = useHttp();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [formValid, setFormValid] = useState(false);
   const [checkoutData, setCheckoutData] = useState({
@@ -47,6 +49,10 @@ const CheckoutForm = (props: Props) => {
     });
   };
 
+  const modalCloseHandler = () => {
+    setModalOpen(false);
+  };
+
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formValid) return;
@@ -54,7 +60,7 @@ const CheckoutForm = (props: Props) => {
     const checkedoutData = (data: any) => {
       if (data.status === 'success') {
         resetForm();
-        toast.success('Checkout is successful!');
+        setModalOpen(true);
         dispatch(uiActions.setNewCheckout());
       } else if (data.status === 'fail') {
         toast.error(data.message, { duration: 3000 });
@@ -82,77 +88,86 @@ const CheckoutForm = (props: Props) => {
   };
 
   return (
-    <form className="flex flex-col gap-6" onSubmit={formSubmitHandler}>
-      <div className="flex flex-col gap-1">
-        <label htmlFor="sh-ad">Shipping Address</label>
-        <input
-          type="text"
-          id="sh-ad"
-          value={checkoutData.address}
-          onChange={(e) =>
-            setCheckoutData({ ...checkoutData, address: e.target.value })
-          }
-          required
-          placeholder="shipping address"
-          className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+    <React.Fragment>
+      {modalOpen && (
+        <Modal
+          onCancel={modalCloseHandler}
+          title="Order Placed"
+          message="🎉 Congratulations! Your order has been successfully placed!"
         />
-      </div>
+      )}
+      <form className="flex flex-col gap-6" onSubmit={formSubmitHandler}>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="sh-ad">Shipping Address</label>
+          <input
+            type="text"
+            id="sh-ad"
+            value={checkoutData.address}
+            onChange={(e) =>
+              setCheckoutData({ ...checkoutData, address: e.target.value })
+            }
+            required
+            placeholder="shipping address"
+            className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+          />
+        </div>
 
-      <div className="flex flex-col gap-1">
-        <label>Payment</label>
-        <input
-          type="text"
-          value={checkoutData.holderName}
-          onChange={(e) =>
-            setCheckoutData({ ...checkoutData, holderName: e.target.value })
-          }
-          required
-          placeholder="card holder name"
-          className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
-        />
-        <input
-          type="text"
-          required
-          value={checkoutData.cardNumber}
-          onChange={(e) =>
-            setCheckoutData({ ...checkoutData, cardNumber: e.target.value })
-          }
-          placeholder="card number"
-          className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
-        />
-        <input
-          type="date"
-          required
-          value={checkoutData.expiryDate}
-          onChange={(e) =>
-            setCheckoutData({ ...checkoutData, expiryDate: e.target.value })
-          }
-          placeholder="expire date"
-          className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
-        />
-        <input
-          type="text"
-          required
-          value={checkoutData.cvv}
-          onChange={(e) =>
-            setCheckoutData({ ...checkoutData, cvv: e.target.value })
-          }
-          placeholder="cvv"
-          className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
-        />
-      </div>
+        <div className="flex flex-col gap-1">
+          <label>Payment</label>
+          <input
+            type="text"
+            value={checkoutData.holderName}
+            onChange={(e) =>
+              setCheckoutData({ ...checkoutData, holderName: e.target.value })
+            }
+            required
+            placeholder="card holder name"
+            className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+          />
+          <input
+            type="text"
+            required
+            value={checkoutData.cardNumber}
+            onChange={(e) =>
+              setCheckoutData({ ...checkoutData, cardNumber: e.target.value })
+            }
+            placeholder="card number"
+            className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+          />
+          <input
+            type="date"
+            required
+            value={checkoutData.expiryDate}
+            onChange={(e) =>
+              setCheckoutData({ ...checkoutData, expiryDate: e.target.value })
+            }
+            placeholder="expire date"
+            className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+          />
+          <input
+            type="text"
+            required
+            value={checkoutData.cvv}
+            onChange={(e) =>
+              setCheckoutData({ ...checkoutData, cvv: e.target.value })
+            }
+            placeholder="cvv"
+            className=" border rounded-sm focus:outline-none border-gray-400 px-3 py-2"
+          />
+        </div>
 
-      <button
-        type="submit"
-        className={`${
-          isLoading
-            ? 'bg-gray-200 pointer-events-none'
-            : 'bg-yellow-300 hover:bg-yellow-400'
-        } px-2 py-2 font-medium rounded-sm `}
-      >
-        {isLoading ? 'Please wait...' : 'Checkout Now'}
-      </button>
-    </form>
+        <button
+          type="submit"
+          className={`${
+            isLoading
+              ? 'bg-gray-200 pointer-events-none'
+              : 'bg-yellow-300 hover:bg-yellow-400'
+          } px-2 py-2 font-medium rounded-sm `}
+        >
+          {isLoading ? 'Please wait...' : 'Checkout Now'}
+        </button>
+      </form>
+    </React.Fragment>
   );
 };
 export default CheckoutForm;
