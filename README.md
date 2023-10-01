@@ -1,6 +1,6 @@
 # MERN Shopping Cart App
 
-This is a MERN (MongoDB, Express, React, Node.js) shopping cart application built with Next.js. It allows users to browse products and add them to their shopping cart.
+This is a MERN (MongoDB, Express, React, Node.js) shopping cart application built with Next.js
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ To run this application locally, follow the steps below for both the server and 
 
 4. Run the server using one of the following commands:
 
-- For tesing this ap (to get proper error handling):
+- For tesing this app (to get proper error response):
 
   ```bash
   npm run start:prod
@@ -48,7 +48,7 @@ To run this application locally, follow the steps below for both the server and 
 
 ### Client Setup
 
-1. After cloning the repository, navigate to the root of the server component and run the following command to install dependencies:
+1. Navigate to the root of the server component and run the following command to install dependencies:
 
    ```bash
    npm install
