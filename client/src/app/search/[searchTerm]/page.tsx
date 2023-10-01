@@ -9,6 +9,10 @@ type Props = {
   };
 };
 
+const resultText = (text: string) => (
+  <p className="text-center my-6 text-xl">{text}</p>
+);
+
 const SearchResults = async ({ params }: Props) => {
   const productsData: Promise<ProductsData> = getAllProducts(params.searchTerm);
   const data = await productsData;
@@ -19,9 +23,16 @@ const SearchResults = async ({ params }: Props) => {
       <Operations />
       <BackToProdBtn className="mb-4" />
       {products.length === 0 ? (
-        <p className="text-center mt-6 text-xl">😞 No result found!</p>
+        resultText('😞 No result found!')
       ) : (
-        <ProductList products={products} />
+        <div>
+          {resultText(
+            `🧐 ${data.results} ${
+              data.results > 1 ? 'results' : 'result'
+            } found`
+          )}
+          <ProductList products={products} />
+        </div>
       )}
     </main>
   );
