@@ -72,9 +72,7 @@ const SignUpPage = () => {
         className="shadow-md px-6 py-4 rounded-sm"
         onSubmit={formSubmitHandler}
       >
-        <h1 className="text-lg mb-4 font-semibold">
-          {isLoading ? 'Processing' : 'Signup'}
-        </h1>
+        <h1 className="text-lg mb-4 font-semibold">Signup</h1>
 
         <div className="flex flex-col">
           <input
