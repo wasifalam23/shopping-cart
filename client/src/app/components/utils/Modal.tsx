@@ -40,7 +40,7 @@ const ModalOverlay = (props: Props) => {
 const Modal = (props: Props) => {
   return (
     <React.Fragment>
-      <Backdrop onCancel={props.onCancel} className="confirm-modal__backdrop" />
+      <Backdrop onCancel={props.onCancel} />
       <ModalOverlay
         onCancel={props.onCancel}
         title={props.title}

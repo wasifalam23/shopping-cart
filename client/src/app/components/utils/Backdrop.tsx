@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-type Props = { className: string; onCancel: () => void };
+type Props = { onCancel: () => void };
 
 const Backdrop = (props: Props) => {
   return (
