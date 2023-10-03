@@ -1,102 +1,102 @@
 [
   {
     "name": "Smart Bulb",
-    "price": "19",
+    "price": 19,
     "image": "https://images.unsplash.com/photo-1532007271951-c487760934ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
   },
   {
     "name": "Coffee Maker",
-    "price": "69",
+    "price": 69,
     "image": "https://images.unsplash.com/photo-1593369196682-6d8ec9ff3ae0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Gaming Console Q",
-    "price": "399",
+    "price": 399,
     "image": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
   },
   {
     "name": "Smart Thermostat",
-    "price": "129",
+    "price": 129,
     "image": "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Smartphone X",
-    "price": "499",
+    "price": 499,
     "image": "https://images.unsplash.com/photo-1603184017968-953f59cd2e37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
   },
   {
     "name": "Monitor Ultra",
-    "price": "249",
+    "price": 249,
     "image": "https://images.unsplash.com/photo-1551459601-c42a28ef7506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Headphones Deluxe",
-    "price": "79",
+    "price": 79,
     "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Fitness Tracker",
-    "price": "89",
+    "price": 89,
     "image": "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Wireless Mouse",
-    "price": "34",
+    "price": 34,
     "image": "https://images.unsplash.com/photo-1660491083562-d91a64d6ea9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2081&q=80"
   },
   {
     "name": "Wireless Router",
-    "price": "79",
+    "price": 79,
     "image": "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Tablet Mini",
-    "price": "299",
+    "price": 299,
     "image": "https://images.unsplash.com/photo-1648806030599-c963fd14a22f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Camera Zoom",
-    "price": "349",
+    "price": 349,
     "image": "https://images.unsplash.com/photo-1513210611897-d78a2bab7654?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80"
   },
   {
     "name": "Wireless Earbuds",
-    "price": "129",
+    "price": 129,
     "image": "https://images.unsplash.com/photo-1516972238977-89271fb2bab8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Backpack Tech",
-    "price": "49",
+    "price": 49,
     "image": "https://images.unsplash.com/photo-1569397592293-1b7431fc811d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
   },
   {
     "name": "Bluetooth Speaker",
-    "price": "59",
+    "price": 59,
     "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
   },
   {
     "name": "Laptop Pro",
-    "price": "899",
+    "price": 899,
     "image": "https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1927&q=80"
   },
   {
     "name": "Printer All-in-One",
-    "price": "179",
+    "price": 179,
     "image": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Desk Chair",
-    "price": "149",
+    "price": 149,
     "image": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
   },
   {
     "name": "External Hard Drive",
-    "price": "119",
+    "price": 119,
     "image": "https://images.unsplash.com/photo-1601737487795-dab272f52420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   {
     "name": "Smartwatch S",
-    "price": "199",
+    "price": 199,
     "image": "https://images.unsplash.com/photo-1632794716789-42d9995fb5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   }
 ]
